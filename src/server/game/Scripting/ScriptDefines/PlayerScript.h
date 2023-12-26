@@ -73,6 +73,9 @@ public:
 
     // Called for player::update
     virtual void OnBeforeUpdate(Player* /*player*/, uint32 /*p_time*/) { }
+
+    virtual void OnBeforeResurrectPlayer(Player* /*player*/, float /*restore_percent*/, bool /*applySickness*/) { }
+
     virtual void OnUpdate(Player* /*player*/, uint32 /*p_time*/) { }
 
     // Called when a player's money is modified (before the modification is done)

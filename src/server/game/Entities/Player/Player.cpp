@@ -4489,6 +4489,8 @@ void Player::ResurrectPlayer(float restore_percent, bool applySickness)
     data << float(0);
     GetSession()->SendPacket(&data);
 
+    sScriptMgr->OnBeforeResurrectPlayer_(this, restore_percent, applySickness);
+
     // speed change, land walk
 
     // remove death flag + set aura

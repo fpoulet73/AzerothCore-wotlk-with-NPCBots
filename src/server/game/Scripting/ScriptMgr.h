@@ -297,6 +297,7 @@ public: /* AchievementCriteriaScript */
 
 public: /* PlayerScript */
     void OnBeforePlayerUpdate(Player* player, uint32 p_time);
+    void OnBeforeResurrectPlayer_(Player* player, float restore_percent, bool applySickness);
     void OnPlayerUpdate(Player* player, uint32 p_time);
     void OnSendInitialPacketsBeforeAddToMap(Player* player, WorldPacket& data);
     void OnPlayerJustDied(Player* player);

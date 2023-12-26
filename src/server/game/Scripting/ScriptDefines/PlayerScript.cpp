@@ -337,6 +337,15 @@ void ScriptMgr::OnBeforePlayerUpdate(Player* player, uint32 p_time)
     });
 }
 
+void ScriptMgr::OnBeforeResurrectPlayer_(Player* player, float restore_percent, bool applySickness)
+{
+    ExecuteScript<PlayerScript>([&](PlayerScript* script)
+    {
+         script->OnBeforeResurrectPlayer(player, restore_percent, applySickness);
+    });
+}
+
+
 void ScriptMgr::OnPlayerUpdate(Player* player, uint32 p_time)
 {
     ExecuteScript<PlayerScript>([&](PlayerScript* script)
